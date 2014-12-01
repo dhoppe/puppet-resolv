@@ -1,0 +1,13 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# <%= file %>
+#
+
+<% scope.lookupvar('::resolv::nameservers').each do |value| -%>
+nameserver	<%= value %>
+<% end -%>
+domain		<%= scope.lookupvar('::resolv::domains').first %>
+search		<%= scope.lookupvar('::resolv::domains').join(" ") %>
+<% if scope.lookupvar('::resolv::nameservers').length > 1 -%>
+options		<%= scope.lookupvar('::resolv::options').join(" ") %>
+<% end -%>

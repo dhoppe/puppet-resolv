@@ -1,0 +1,12 @@
+---
+resolv::config_file_template: 'resolv/common/etc/resolv.conf.erb'
+resolv::domains:
+  - 'debian-solutions.de'
+  - 'debian-solutions.lan'
+resolv::nameserver:
+  - '8.8.8.8'
+  - '8.8.4.4'
+resolv::options:
+  - 'timeout:1'
+  - 'attempts:1'
+  - 'rotate'
