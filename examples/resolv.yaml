@@ -3,7 +3,7 @@ resolv::config_file_template: 'resolv/common/etc/resolv.conf.erb'
 resolv::domains:
   - 'debian-solutions.de'
   - 'debian-solutions.lan'
-resolv::nameserver:
+resolv::nameservers:
   - '8.8.8.8'
   - '8.8.4.4'
 resolv::options:
