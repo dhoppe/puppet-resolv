@@ -23,7 +23,7 @@ class resolv (
   $config_file_hash         = {},
   $config_file_options_hash = {},
 
-  $domains                  = ["${::domain}"],
+  $domains                  = [$::domain],
   $nameservers              = ['8.8.8.8', '8.8.4.4'],
   $options                  = ['timeout:1', 'attempts:1', 'rotate'],
 ) inherits ::resolv::params {

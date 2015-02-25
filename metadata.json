@@ -1,16 +1,16 @@
 {
   "name": "dhoppe-resolv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Dennis Hoppe",
   "summary": "This module configures the Resolv file.",
   "license": "Apache 2.0",
-  "source": "git://github.com/dhoppe/puppet-resolv",
+  "source": "git://github.com/dhoppe/puppet-resolv.git",
   "project_page": "https://github.com/dhoppe/puppet-resolv",
   "issues_url": "https://github.com/dhoppe/puppet-resolv/issues",
   "dependencies": [
     {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0"
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.2.0 < 5.0.0"
     }
   ],
   "operatingsystem_support": [
@@ -18,7 +18,8 @@
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
         "6",
-        "7"
+        "7",
+        "8"
       ]
     },
     {
