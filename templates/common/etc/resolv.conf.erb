@@ -3,11 +3,11 @@
 # <%= file %>
 #
 
-<% scope.lookupvar('::resolv::nameservers').each do |value| -%>
+<% scope['::resolv::nameservers'].each do |value| -%>
 nameserver	<%= value %>
 <% end -%>
-domain		<%= scope.lookupvar('::resolv::domains').first %>
-search		<%= scope.lookupvar('::resolv::domains').join(" ") %>
-<% if scope.lookupvar('::resolv::nameservers').length > 1 -%>
-options		<%= scope.lookupvar('::resolv::options').join(" ") %>
+domain		<%= scope['::resolv::domains'].first %>
+search		<%= scope['::resolv::domains'].join(" ") %>
+<% if scope['::resolv::nameservers'].length > 1 -%>
+options		<%= scope['::resolv::options'].join(" ") %>
 <% end -%>
