@@ -14,71 +14,71 @@ describe 'resolv', :type => :class do
     it { is_expected.to contain_anchor('resolv::end') }
 
     context "on #{osfamily}" do
-#      describe 'resolv::install' do
-#        context 'defaults' do
-#          it do
-#            is_expected.to contain_package('resolv').with({
-#              'ensure' => 'present',
-#            })
-#          end
-#        end
-#
-#        context 'when package latest' do
-#          let(:params) {{
-#            :package_ensure => 'latest',
-#          }}
-#
-#          it do
-#            is_expected.to contain_package('resolv').with({
-#              'ensure' => 'latest',
-#            })
-#          end
-#        end
-#
-#        context 'when package absent' do
-#          let(:params) {{
-#            :package_ensure => 'absent',
-#          }}
-#
-#          it do
-#            is_expected.to contain_package('resolv').with({
-#              'ensure' => 'absent',
-#            })
-#          end
-#          it do
-#            is_expected.to contain_file('resolv.conf').with({
-#              'ensure'  => 'present',
-#              'require' => nil,
-#            })
-#          end
-#        end
-#
-#        context 'when package purged' do
-#          let(:params) {{
-#            :package_ensure => 'purged',
-#          }}
-#
-#          it do
-#            is_expected.to contain_package('resolv').with({
-#              'ensure' => 'purged',
-#            })
-#          end
-#          it do
-#            is_expected.to contain_file('resolv.conf').with({
-#              'ensure'  => 'absent',
-#              'require' => nil,
-#            })
-#          end
-#        end
-#      end
+      # describe 'resolv::install' do
+      #   context 'defaults' do
+      #     it do
+      #       is_expected.to contain_package('resolv').with(
+      #         'ensure' => 'present',
+      #       )
+      #     end
+      #   end
+
+      #   context 'when package latest' do
+      #     let(:params) {{
+      #       :package_ensure => 'latest',
+      #     }}
+
+      #     it do
+      #       is_expected.to contain_package('resolv').with(
+      #         'ensure' => 'latest',
+      #       )
+      #     end
+      #   end
+
+      #   context 'when package absent' do
+      #     let(:params) {{
+      #       :package_ensure => 'absent',
+      #     }}
+
+      #     it do
+      #       is_expected.to contain_package('resolv').with(
+      #         'ensure' => 'absent',
+      #       )
+      #     end
+      #     it do
+      #       is_expected.to contain_file('resolv.conf').with(
+      #         'ensure'  => 'present',
+      #         'require' => nil,
+      #       )
+      #     end
+      #   end
+
+      #   context 'when package purged' do
+      #     let(:params) {{
+      #       :package_ensure => 'purged',
+      #     }}
+
+      #     it do
+      #       is_expected.to contain_package('resolv').with(
+      #         'ensure' => 'purged',
+      #       )
+      #     end
+      #     it do
+      #       is_expected.to contain_file('resolv.conf').with(
+      #         'ensure'  => 'absent',
+      #         'require' => nil,
+      #       )
+      #     end
+      #   end
+      # end
 
       describe 'resolv::config' do
         context 'defaults' do
           it do
-            is_expected.to contain_file('resolv.conf').with({
+            is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
               'require' => nil,
-            })
+            )
           end
         end
 
@@ -88,14 +88,14 @@ describe 'resolv', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('resolv.dir').with({
+            is_expected.to contain_file('resolv.dir').with(
               'ensure'  => 'directory',
               'force'   => false,
               'purge'   => false,
               'recurse' => true,
               'source'  => 'puppet:///modules/resolv/common/etc',
               'require' => nil,
-            })
+            )
           end
         end
 
@@ -106,14 +106,14 @@ describe 'resolv', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('resolv.dir').with({
+            is_expected.to contain_file('resolv.dir').with(
               'ensure'  => 'directory',
               'force'   => true,
               'purge'   => true,
               'recurse' => true,
               'source'  => 'puppet:///modules/resolv/common/etc',
               'require' => nil,
-            })
+            )
           end
         end
 
@@ -123,11 +123,11 @@ describe 'resolv', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('resolv.conf').with({
+            is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
               'source'  => 'puppet:///modules/resolv/common/etc/resolv.conf',
               'require' => nil,
-            })
+            )
           end
         end
 
@@ -137,11 +137,11 @@ describe 'resolv', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('resolv.conf').with({
+            is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => nil,
-            })
+            )
           end
         end
 
@@ -151,11 +151,11 @@ describe 'resolv', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('resolv.conf').with({
+            is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => nil,
-            })
+            )
           end
         end
 
@@ -168,11 +168,11 @@ describe 'resolv', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('resolv.conf').with({
+            is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => nil,
-            })
+            )
           end
         end
       end

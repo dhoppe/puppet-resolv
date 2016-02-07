@@ -16,11 +16,11 @@ describe 'resolv::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_resolv.conf').with({
+          is_expected.to contain_file('define_resolv.conf').with(
             'ensure'  => 'present',
             'source'  => 'puppet:///modules/resolv/common/etc/resolv.conf',
             'require' => nil,
-          })
+          )
         end
       end
 
@@ -31,11 +31,11 @@ describe 'resolv::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_resolv.conf').with({
+          is_expected.to contain_file('define_resolv.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => nil,
-          })
+          )
         end
       end
 
@@ -46,11 +46,11 @@ describe 'resolv::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_resolv.conf').with({
+          is_expected.to contain_file('define_resolv.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => nil,
-          })
+          )
         end
       end
 
@@ -64,11 +64,11 @@ describe 'resolv::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_resolv.conf').with({
+          is_expected.to contain_file('define_resolv.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => nil,
-          })
+          )
         end
       end
     end
