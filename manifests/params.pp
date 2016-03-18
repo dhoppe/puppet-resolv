@@ -34,7 +34,7 @@ class resolv::params {
   }
 
   case $::osfamily {
-    'Debian': {
+    'Debian', 'Gentoo', 'Archlinux', 'RedHat', 'FreeBSD': {
     }
     default: {
       fail("${::operatingsystem} not supported.")
