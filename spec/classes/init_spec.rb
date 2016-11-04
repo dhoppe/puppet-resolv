@@ -1,10 +1,12 @@
 require 'spec_helper'
 
-describe 'resolv', :type => :class do
+describe 'resolv', type: :class do
   ['Debian'].each do |osfamily|
-    let(:facts) {{
-      :osfamily => osfamily,
-    }}
+    let(:facts) do
+      {
+        osfamily: osfamily
+      }
+    end
 
     it { is_expected.to compile.with_all_deps }
     it { is_expected.to contain_anchor('resolv::begin') }
@@ -77,15 +79,17 @@ describe 'resolv', :type => :class do
           it do
             is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
-              'require' => nil,
+              'require' => nil
             )
           end
         end
 
         context 'when source dir' do
-          let(:params) {{
-            :config_dir_source => 'puppet:///modules/resolv/common/etc',
-          }}
+          let(:params) do
+            {
+              config_dir_source: 'puppet:///modules/resolv/common/etc'
+            }
+          end
 
           it do
             is_expected.to contain_file('resolv.dir').with(
@@ -94,16 +98,18 @@ describe 'resolv', :type => :class do
               'purge'   => false,
               'recurse' => true,
               'source'  => 'puppet:///modules/resolv/common/etc',
-              'require' => nil,
+              'require' => nil
             )
           end
         end
 
         context 'when source dir purged' do
-          let(:params) {{
-            :config_dir_purge  => true,
-            :config_dir_source => 'puppet:///modules/resolv/common/etc',
-          }}
+          let(:params) do
+            {
+              config_dir_purge: true,
+              config_dir_source: 'puppet:///modules/resolv/common/etc'
+            }
+          end
 
           it do
             is_expected.to contain_file('resolv.dir').with(
@@ -112,66 +118,74 @@ describe 'resolv', :type => :class do
               'purge'   => true,
               'recurse' => true,
               'source'  => 'puppet:///modules/resolv/common/etc',
-              'require' => nil,
+              'require' => nil
             )
           end
         end
 
         context 'when source file' do
-          let(:params) {{
-            :config_file_source => 'puppet:///modules/resolv/common/etc/resolv.conf',
-          }}
+          let(:params) do
+            {
+              config_file_source: 'puppet:///modules/resolv/common/etc/resolv.conf'
+            }
+          end
 
           it do
             is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
               'source'  => 'puppet:///modules/resolv/common/etc/resolv.conf',
-              'require' => nil,
+              'require' => nil
             )
           end
         end
 
         context 'when content string' do
-          let(:params) {{
-            :config_file_string => '# THIS FILE IS MANAGED BY PUPPET',
-          }}
+          let(:params) do
+            {
+              config_file_string: '# THIS FILE IS MANAGED BY PUPPET'
+            }
+          end
 
           it do
             is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
-              'content' => /THIS FILE IS MANAGED BY PUPPET/,
-              'require' => nil,
+              'content' => %r{THIS FILE IS MANAGED BY PUPPET},
+              'require' => nil
             )
           end
         end
 
         context 'when content template' do
-          let(:params) {{
-            :config_file_template => 'resolv/common/etc/resolv.conf.erb',
-          }}
+          let(:params) do
+            {
+              config_file_template: 'resolv/common/etc/resolv.conf.erb'
+            }
+          end
 
           it do
             is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
-              'content' => /THIS FILE IS MANAGED BY PUPPET/,
-              'require' => nil,
+              'content' => %r{THIS FILE IS MANAGED BY PUPPET},
+              'require' => nil
             )
           end
         end
 
         context 'when content template (custom)' do
-          let(:params) {{
-            :config_file_template     => 'resolv/common/etc/resolv.conf.erb',
-            :config_file_options_hash => {
-              'key' => 'value',
-            },
-          }}
+          let(:params) do
+            {
+              config_file_template: 'resolv/common/etc/resolv.conf.erb',
+              config_file_options_hash: {
+                'key' => 'value'
+              }
+            }
+          end
 
           it do
             is_expected.to contain_file('resolv.conf').with(
               'ensure'  => 'present',
-              'content' => /THIS FILE IS MANAGED BY PUPPET/,
-              'require' => nil,
+              'content' => %r{THIS FILE IS MANAGED BY PUPPET},
+              'require' => nil
             )
           end
         end
