@@ -1,10 +1,11 @@
 # resolv
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-resolv.png?branch=master)](https://travis-ci.org/dhoppe/puppet-resolv)
+[![Code Coverage](https://coveralls.io/repos/github/dhoppe/puppet-resolv/badge.svg?branch=master)](https://coveralls.io/github/dhoppe/puppet-resolv)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/resolv.svg)](https://forge.puppetlabs.com/dhoppe/resolv)
-[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/resolv.svg)](https://forge.puppetlabs.com/dhoppe/resolv)
-[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
-[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/dhoppe/resolv.svg)](https://forge.puppetlabs.com/dhoppe/resolv)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/dhoppe/resolv.svg)](https://forge.puppetlabs.com/dhoppe/resolv)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/dhoppe/resolv.svg)](https://forge.puppetlabs.com/dhoppe/resolv)
 
 #### Table of Contents
 
