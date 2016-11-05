@@ -1,6 +1,6 @@
 {
   "name": "dhoppe-resolv",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "Dennis Hoppe",
   "summary": "This module configures the Resolv file.",
   "license": "Apache-2.0",
@@ -8,6 +8,10 @@
   "project_page": "https://github.com/dhoppe/puppet-resolv",
   "issues_url": "https://github.com/dhoppe/puppet-resolv/issues",
   "dependencies": [
+    {
+      "name": "puppet/extlib",
+      "version_requirement": ">= 1.1.0 < 2.0.0"
+    },
     {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">= 4.5.0 < 5.0.0"
@@ -28,6 +32,62 @@
         "12.04",
         "14.04"
       ]
+    },
+    {
+      "operatingsystem": "FreeBSD",
+      "operatingsystemrelease": [
+        "10.2",
+        "10.1",
+        "10.0",
+        "9.3",
+        "8.4"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "PSBM",
+      "operatingsystemrelease": [
+        "5.0"
+      ]
+    },
+    {
+      "operatingsystem": "CloudLinux",
+      "operatingsystemrelease": [
+        "6.0",
+        "7.0"
+      ]
+    },
+    {
+      "operatingsystem": "VirtuozzoLinux",
+      "operatingsystemrelease": [
+        "6.0"
+      ]
+    },
+    {
+      "operatingsystem": "Archlinux"
+    },
+    {
+      "operatingsystem": "Gentoo"
     }
   ],
   "requirements": [

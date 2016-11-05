@@ -1,73 +1,82 @@
 require 'spec_helper'
 
-describe 'resolv::define', :type => :define do
-  ['Debian'].each do |osfamily|
-    let(:facts) {{
-      :osfamily => osfamily,
-    }}
-    let(:pre_condition) { 'include resolv' }
-    let(:title) { 'resolv.conf' }
+describe 'resolv::define', type: :define do
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) do
+        facts
+      end
 
-    context "on #{osfamily}" do
+      let(:pre_condition) { 'include resolv' }
+      let(:title) { 'resolv.conf' }
+
       context 'when source file' do
-        let(:params) {{
-          :config_file_path   => '/etc/resolv.2nd.conf',
-          :config_file_source => 'puppet:///modules/resolv/common/etc/resolv.conf',
-        }}
+        let(:params) do
+          {
+            config_file_path: '/etc/resolv.2nd.conf',
+            config_file_source: 'puppet:///modules/resolv/common/etc/resolv.conf'
+          }
+        end
 
         it do
           is_expected.to contain_file('define_resolv.conf').with(
             'ensure'  => 'present',
             'source'  => 'puppet:///modules/resolv/common/etc/resolv.conf',
-            'require' => nil,
+            'require' => nil
           )
         end
       end
 
       context 'when content string' do
-        let(:params) {{
-          :config_file_path   => '/etc/resolv.3rd.conf',
-          :config_file_string => '# THIS FILE IS MANAGED BY PUPPET',
-        }}
+        let(:params) do
+          {
+            config_file_path: '/etc/resolv.3rd.conf',
+            config_file_string: '# THIS FILE IS MANAGED BY PUPPET'
+          }
+        end
 
         it do
           is_expected.to contain_file('define_resolv.conf').with(
             'ensure'  => 'present',
-            'content' => /THIS FILE IS MANAGED BY PUPPET/,
-            'require' => nil,
+            'content' => %r{THIS FILE IS MANAGED BY PUPPET},
+            'require' => nil
           )
         end
       end
 
       context 'when content template' do
-        let(:params) {{
-          :config_file_path     => '/etc/resolv.4th.conf',
-          :config_file_template => 'resolv/common/etc/resolv.conf.erb',
-        }}
+        let(:params) do
+          {
+            config_file_path: '/etc/resolv.4th.conf',
+            config_file_template: 'resolv/common/etc/resolv.conf.erb'
+          }
+        end
 
         it do
           is_expected.to contain_file('define_resolv.conf').with(
             'ensure'  => 'present',
-            'content' => /THIS FILE IS MANAGED BY PUPPET/,
-            'require' => nil,
+            'content' => %r{THIS FILE IS MANAGED BY PUPPET},
+            'require' => nil
           )
         end
       end
 
       context 'when content template (custom)' do
-        let(:params) {{
-          :config_file_path         => '/etc/resolv.5th.conf',
-          :config_file_template     => 'resolv/common/etc/resolv.conf.erb',
-          :config_file_options_hash => {
-            'key' => 'value',
-          },
-        }}
+        let(:params) do
+          {
+            config_file_path: '/etc/resolv.5th.conf',
+            config_file_template: 'resolv/common/etc/resolv.conf.erb',
+            config_file_options_hash: {
+              'key' => 'value'
+            }
+          }
+        end
 
         it do
           is_expected.to contain_file('define_resolv.conf').with(
             'ensure'  => 'present',
-            'content' => /THIS FILE IS MANAGED BY PUPPET/,
-            'require' => nil,
+            'content' => %r{THIS FILE IS MANAGED BY PUPPET},
+            'require' => nil
           )
         end
       end
