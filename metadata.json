@@ -1,6 +1,6 @@
 {
   "name": "dhoppe-resolv",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "Dennis Hoppe",
   "summary": "This module configures the Resolv file.",
   "license": "Apache-2.0",
