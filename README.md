@@ -39,6 +39,7 @@ operating systems and distributions.
 
 * Puppet >= 3.0
 * Facter >= 1.6
+* [Extlib module](https://github.com/voxpupuli/puppet-extlib)
 * [Stdlib module](https://github.com/puppetlabs/puppetlabs-stdlib)
 
 ### Beginning with resolv
@@ -273,7 +274,7 @@ Defaults to '['timeout:1', 'attempts:1', 'rotate']'.
 This module has been tested on:
 
 * Debian 6/7/8
-* Ubuntu 12.04/14.04
+* Ubuntu 12.04/14.04/16.04
 
 ## Development
 
