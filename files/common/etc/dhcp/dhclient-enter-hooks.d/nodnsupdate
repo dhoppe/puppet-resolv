@@ -1,0 +1,10 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# /etc/puppet/environments/production/modules/screen/files/common/etc/screenrc
+#
+
+#!/bin/bash
+
+make_resolv_conf(){
+    :
+}
