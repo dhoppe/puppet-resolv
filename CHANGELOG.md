@@ -1,3 +1,9 @@
+## 2016-12-23 Release 1.3.2
+
+### Summary
+
+- [Puppet] Prevent the DHCP client from changing the resolv.conf
+
 ## 2016-11-30 Release 1.3.1
 
 ### Summary
